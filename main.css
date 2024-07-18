@@ -1,0 +1,136 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+.app-title{
+        padding-top: 1em;
+        text-align: center;
+}
+
+
+main{
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;;
+    background-color: white;
+    box-shadow: 0 0 20px 0px #00000065;
+}
+
+.color-scheme-form{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em .5em;
+    font-size: .75rem;
+    align-items: center;
+}
+
+#color-selection{
+    width: 15%;
+    height: 3.5em;
+    margin: 1em;
+}
+
+#schemes-selector{
+    min-width: 50%;
+    margin: 0 1em;
+    padding: 1em;
+}
+
+#color-scheme-btn{
+    padding: 1em ;
+}
+
+#rendered-colors-container{
+    display: grid;
+    grid-auto-rows: 200px;
+}
+
+.rendered-colors{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    text-align: center;
+    z-index: 0;
+    position: relative;
+}
+    
+#rendered-hex-numbers{
+    padding: .5em;
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+[data-hex]:hover{
+    border: 1px solid white;
+    z-index: 3;
+}
+
+.rainbow {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow{
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+@media(min-width: 480px){
+    
+    .app-title{
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    
+    #rendered-colors-container{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .rendered-colors{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+        text-align: center;
+        height: 500px;
+        position: relative;
+    }
+        
+    #rendered-hex-numbers{
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+    
+    [data-hex]:hover{
+        padding: .5em;
+    }
+
+}
